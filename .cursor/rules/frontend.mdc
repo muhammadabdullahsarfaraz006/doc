@@ -1,0 +1,68 @@
+
+---
+description: Frontend UI, rich-text editor, interaction design, accessibility and responsive behavior.
+globs: src/**/*.tsx, src/**/*.css
+alwaysApply: false
+---
+
+# Frontend Rules
+
+## Visual direction
+
+Build a polished, modern productivity application.
+
+Use:
+- Minimal SaaS design.
+- Clean white and neutral surfaces.
+- Restrained blue accent color.
+- Consistent typography.
+- Clear visual hierarchy.
+- Subtle borders and shadows.
+- Consistent spacing.
+- Lucide icons.
+- Responsive layouts.
+
+Avoid:
+- Excessive gradients.
+- Unnecessary animations.
+- Oversized cards.
+- Generic AI-generated dashboard aesthetics.
+- Excessive decorative elements.
+
+## Editor experience
+
+Use Tiptap.
+
+Support:
+- Bold
+- Italic
+- Underline
+- Headings
+- Paragraphs
+- Bullet lists
+- Numbered lists
+- Undo and redo
+- Keyboard shortcuts
+
+The editor must:
+- Load structured persisted content.
+- Preserve formatting.
+- Support keyboard navigation.
+- Respect viewer permissions.
+- Show save status.
+- Handle empty content.
+
+## Interaction quality
+
+Every button, dropdown and modal must have a meaningful action.
+
+Include:
+- Loading states.
+- Empty states.
+- Error feedback.
+- Form validation.
+- Confirmation before destructive actions.
+- Accessible dialogs.
+- Clear disabled states.
+
+Avoid placeholder controls and non-functional UI.

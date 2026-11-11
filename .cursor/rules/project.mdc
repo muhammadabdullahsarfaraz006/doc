@@ -1,0 +1,73 @@
+
+---
+description: Core product requirements, coding standards and delivery constraints for the Ajaia collaborative document workspace.
+alwaysApply: true
+---
+
+# Ajaia Workspace - Project Rules
+
+You are acting as a senior full-stack engineer working on a real product assessment.
+
+## Product objective
+
+Build a lightweight collaborative document editor inspired by Google Docs.
+
+The product must support:
+- User authentication
+- Document creation and renaming
+- Rich-text editing
+- Persistent document storage
+- Autosaving
+- Text and Markdown file import
+- Document ownership
+- Sharing with registered users
+- Editor and viewer permissions
+- Owned and shared document views
+
+## Engineering standards
+
+- Use TypeScript for application code.
+- Enable strict TypeScript checks.
+- Avoid `any`. Use explicit types and safe narrowing.
+- Write small, reusable components.
+- Separate UI, business logic, validation and database access.
+- Use server-side authorization for protected operations.
+- Validate all external input.
+- Use environment variables for configuration.
+- Never commit secrets.
+- Do not introduce unnecessary dependencies.
+- Do not create abstractions without a clear purpose.
+- Follow existing project conventions.
+
+## Product standards
+
+- Prioritize working functionality over visual gimmicks.
+- Build a coherent and polished experience.
+- Every interactive control must work.
+- Provide loading, empty, error and success states.
+- Use accessible labels and keyboard navigation.
+- Ensure responsive layouts.
+- Do not use fake data in production flows.
+- Clearly distinguish actual capabilities from mocked functionality.
+
+## Delivery standards
+
+- Run type checks after meaningful implementation changes.
+- Run relevant tests.
+- Fix errors rather than suppressing them.
+- Keep README and environment examples updated.
+- Never claim deployment or test success without verification.
+- Do not silently remove existing functionality.
+
+## Development workflow
+
+Before implementing a substantial feature:
+1. Inspect the existing code.
+2. Explain the intended implementation.
+3. Identify affected files and dependencies.
+4. Identify potential regressions.
+5. Implement incrementally.
+6. Run appropriate validation.
+7. Summarize changes and outstanding issues.
+
+Never rewrite the entire application to implement a small feature.

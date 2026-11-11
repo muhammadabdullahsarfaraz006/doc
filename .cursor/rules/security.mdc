@@ -1,0 +1,63 @@
+
+---
+description: Authentication, authorization, database security, document permissions and secure file handling.
+alwaysApply: true
+---
+
+# Security Rules
+
+## Authentication
+
+- Use Supabase Auth.
+- Validate the current user on protected server operations.
+- Do not trust user IDs supplied by the browser.
+- Derive identity from the authenticated session.
+- Protect workspace and document routes.
+
+## Authorization
+
+Document roles:
+- Owner
+- Editor
+- Viewer
+
+Permissions:
+- Owner: full control.
+- Editor: read and update document content.
+- Viewer: read-only access.
+
+Only the owner can:
+- Rename documents.
+- Share documents.
+- Modify collaborator permissions.
+- Remove collaborators.
+- Delete documents.
+
+## Database security
+
+- Enable RLS on every user-data table.
+- Write explicit SELECT, INSERT, UPDATE and DELETE policies as applicable.
+- Enforce ownership and membership checks in the database.
+- Prevent unauthorized membership changes.
+- Prevent owner_id manipulation.
+- Prevent permission escalation.
+- Avoid recursive RLS policy designs.
+- Test access using multiple authenticated users.
+
+Never rely on frontend checks as the security boundary.
+
+## File validation
+
+- Support .txt and .md only.
+- Enforce a 2 MB maximum.
+- Validate extension, MIME type and size.
+- Reject unsupported and malformed files.
+- Do not execute uploaded content.
+- Escape or safely render imported content.
+
+## Secrets
+
+- Never expose the Supabase service-role key.
+- Never commit .env.local.
+- Provide .env.example with placeholder values.
+- Keep privileged operations server-side.

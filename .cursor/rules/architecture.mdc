@@ -1,0 +1,88 @@
+
+---
+description: Application architecture, data modeling, persistence and implementation boundaries.
+alwaysApply: true
+---
+
+# Architecture Rules
+
+## Technology decisions
+
+- Next.js App Router.
+- TypeScript strict mode.
+- Supabase PostgreSQL.
+- Supabase Auth.
+- Supabase Row Level Security.
+- Tiptap rich-text editor.
+- Tailwind CSS and shadcn/ui.
+- Zod for validation.
+- Vitest for unit and integration tests.
+- Playwright for browser-based end-to-end tests.
+
+## Architecture
+
+Use a modular monolith.
+
+Organize code by application feature:
+- Authentication
+- Documents
+- Editor
+- Sharing
+- File import
+
+Keep database operations and business logic out of presentation components.
+
+Use appropriately separated server and browser Supabase clients.
+
+Do not expose service-role credentials to the browser.
+
+## Data model
+
+Profiles:
+- id
+- email
+- full_name
+- avatar_url
+- created_at
+
+Documents:
+- id
+- title
+- content (JSONB)
+- owner_id
+- created_at
+- updated_at
+
+Document members:
+- id
+- document_id
+- user_id
+- role
+- created_at
+
+Use UUID primary keys and appropriate foreign keys.
+
+Add database constraints and indexes.
+
+Use Tiptap JSON as the canonical document representation.
+
+## Persistence
+
+- Save document content to PostgreSQL.
+- Implement debounced autosaving.
+- Track saving, saved and failed states.
+- Prevent stale asynchronous writes from overwriting newer changes.
+- Restore saved content when reopening a document.
+- Handle empty documents and failed requests safely.
+
+## Scope constraints
+
+Do not implement:
+- Real-time collaborative editing.
+- Cursor presence.
+- Comments.
+- Version history.
+- Complex enterprise administration.
+- Unnecessary microservices.
+
+Sharing must provide persistent access to another authenticated user.

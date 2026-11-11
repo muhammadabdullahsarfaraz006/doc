@@ -1,0 +1,43 @@
+{
+  "name": "ajaia-collaboration",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ajaia Workspace Hocuspocus collaboration service",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hocuspocus/extension-database": "^4.8.0",
+    "@hocuspocus/extension-redis": "^4.8.0",
+    "@hocuspocus/server": "^4.8.0",
+    "@hocuspocus/transformer": "^4.8.0",
+    "@supabase/supabase-js": "^2.119.0",
+    "@tiptap/core": "^3.33.1",
+    "@tiptap/extension-highlight": "^3.33.1",
+    "@tiptap/extension-link": "^3.33.1",
+    "@tiptap/extension-subscript": "^3.33.1",
+    "@tiptap/extension-superscript": "^3.33.1",
+    "@tiptap/extension-table": "^3.33.1",
+    "@tiptap/extension-text-align": "^3.33.1",
+    "@tiptap/extension-text-style": "^3.33.1",
+    "@tiptap/extension-underline": "^3.33.1",
+    "@tiptap/pm": "^3.33.1",
+    "@tiptap/starter-kit": "^3.33.1",
+    "dotenv": "^16.4.7",
+    "ioredis": "^5.11.1",
+    "tsx": "^4.19.3",
+    "ws": "^8.22.2",
+    "y-protocols": "^1.0.6",
+    "yjs": "^13.6.33",
+    "zod": "3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/ws": "^8.18.2",
+    "typescript": "^5"
+  }
+}

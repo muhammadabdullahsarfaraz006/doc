@@ -1,0 +1,38 @@
+
+---
+description: Testing strategy, validation, regression prevention and completion criteria.
+globs: tests/**/*.ts, tests/**/*.tsx, **/*.test.ts, **/*.test.tsx
+alwaysApply: false
+---
+
+# Testing Rules
+
+Test real behavior, not implementation details.
+
+Required tests:
+
+1. Document creation.
+2. Document title validation.
+3. Document content persistence.
+4. Unauthorized document access.
+5. Viewer cannot edit.
+6. Editor can edit.
+7. Non-owner cannot share.
+8. Invalid file upload rejection.
+9. Successful TXT and Markdown import.
+
+Use Vitest for unit and integration tests.
+
+Use Playwright for important end-to-end user journeys.
+
+Test at least two different authenticated users.
+
+Do not mock the behavior under test in a way that makes the test meaningless.
+
+Before considering a feature complete:
+- Run the relevant tests.
+- Run TypeScript checks.
+- Run linting.
+- Check browser console errors.
+- Verify the actual UI flow.
+- Report any tests that could not be executed.
